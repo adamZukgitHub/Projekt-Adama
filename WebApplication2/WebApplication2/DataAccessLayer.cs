@@ -28,5 +28,13 @@ namespace WebApplication2
             sqlcmd.ExecuteNonQuery();
             conn.Close();
         }
+
+        public string GetConnectionString() => ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+
+        //To samo można zapisać tak:
+        //public string GetConnectionString() 
+        //{ 
+        //    return ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString; 
+        //}
     }
 }

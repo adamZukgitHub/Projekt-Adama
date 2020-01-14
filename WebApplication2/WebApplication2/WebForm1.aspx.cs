@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApplication2.Models;
 
 namespace WebApplication2
 {
@@ -62,9 +63,15 @@ namespace WebApplication2
         protected void szukajBtn_Click(object sender, EventArgs e)
         {        
             b1.studentNo = Convert.ToInt32(txtstudentNo.Text);
-            b1.szukajStudent();         
-            referenceGridView();    
-            
+            StudentModel student = b1.szukajStudent();
+
+            txtIDstudent.Text = student.ID_student.ToString();
+            txtname.Text = student.name;
+            txtnazwisko.Text = student.nazwisko;
+            txtstudentNo.Text = student.studentNo.ToString();
+
+            referenceGridView();
+
         }
 
     }
